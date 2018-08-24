@@ -1,0 +1,142 @@
+@import "../styles";
+
+$footer-height : 35px;
+
+header,footer,.titleBar{
+  div{
+    max-width: 1024px;
+    margin: auto;
+  }
+}
+header{
+  background: $main-color;
+  padding: 15px;
+  .titleBar{
+    .titleBarContent{
+      display: flex;
+      justify-content: space-between;
+      h2{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        color: $white-color;
+        align-items: center;
+        font-size: 150%;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 110%;
+    small{
+      padding-top: 5px;
+      font-size: 85%;
+      margin-left: 5px;
+    }
+  }
+}
+
+main{
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: $footer-height;
+  .altNav{
+    display: flex;
+    justify-content: space-between;
+    .altNavBtn{
+      border-radius: 50%;
+      color: $white-color;
+      margin: 5px;
+      margin-top: -48px;
+      border: 3px solid;
+      display: flex;
+      height: 40px;
+      width:  40px;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      transition: all ease-in-out .3s;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+  nav, .shortcuts{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: space-evenly;
+  
+    a{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      width: 100px;
+      padding: 5px;
+      color: $main-color;
+      border: 3px solid;
+      margin: 5px;
+      text-decoration: none;
+      transition: all ease-in-out .3s;
+      &:hover{
+        transform: scale(1.05)
+      }
+    }
+  }
+}
+
+.navBtns{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  right: 15px;
+  bottom: 50px;
+  color: $white-color;
+  .navBtn{
+    background: $main-color;
+    display: flex;
+    height: 40px;
+    width:  40px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $white-color;
+    margin-top: 5px;
+    transition: .3s ease-in-out all;
+    border-radius: 50%;
+    &:hover{
+      transform: scale(1.05);
+    }
+  }
+  .navBtn.bigger{
+    height: 50px;
+    width: 50px;
+  }
+  
+}
+
+footer{
+  background: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: $footer-height;
+  div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 15px;
+  }
+}
