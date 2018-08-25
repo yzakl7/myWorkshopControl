@@ -22,22 +22,24 @@
 
   <ng-template #elseBlock2>
     <nav>
+      <a routerLink="/">Dashboard</a>
       <a routerLink="/clients">Clients</a>
       <a routerLink="/cars">Cars</a>
       <a routerLink="/transactions">Transactions</a>
       <a routerLink="/statistics">Statistics</a>
+      <a routerLink="/changelog">Change log</a>
     </nav>
   </ng-template>
   
   <router-outlet></router-outlet>
 </main>
 <div class="navBtns">
-  <a class="navBtn" routerLink="/deliver"><i class="material-icons">check</i></a>
+  <a class="navBtn" routerLink="/progress"><i class="material-icons">playlist_add_check</i></a>
   <a class="navBtn bigger" routerLink="/receive"><i class="material-icons">add</i></a>
 </div>
 <footer>
   <div class="footerContent">
-      <h1>My workshop control: <small>Sistema de control de talleres mecánicos</small> desarrollado por: Isaac Sauri</h1>
+      <h1>My workshop control: Sistema de control de talleres - Isaac Sauri</h1>
   </div>
 </footer>
 

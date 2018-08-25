@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ClientsComponent } from './components/clients/clients.component';
@@ -16,6 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ReceiveComponent } from './components/receive/receive.component';
 import { DeliverComponent } from './components/deliver/deliver.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { ClientService } from './services/client.service';
+import { ChangelogComponent } from './components/changelog/changelog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     ReceiveComponent,
     DeliverComponent,
     StatisticsComponent,
+    ChangelogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     AngularFireDatabaseModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

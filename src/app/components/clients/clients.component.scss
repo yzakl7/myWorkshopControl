@@ -1,0 +1,43 @@
+form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  .detailsActions{
+    display: flex;
+    label{
+      border: 3px solid;
+      margin: 5px;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  }
+  input[type = reset],
+  input[type = submit]{
+    display: none;
+  }
+}
+
+.row{
+  display: flex;
+  height: 35px;
+  align-items: center;
+  a{
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;;
+  }
+  div{
+    flex: 1;
+  }  
+  &:nth-of-type(even){
+    background: rgba($color: #000000, $alpha: .2);
+  }
+}
+
+.temporalFix{
+  height: 150px;
+}

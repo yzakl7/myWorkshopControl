@@ -1,4 +1,76 @@
-<p>
-  clients works!
-</p>
+<form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+  <label for="name">name</label>
+  <input
+    type="text"
+    name="name"
+    id="name"
+    #name="ngModel"
+    [(ngModel)]="clientService.selectedClient.name"
+  >
+  <label for="phone">phone</label>
+  <input
+    type="text"
+    id="phone"
+    name="phone"
+    #phone="ngModel"
+    [(ngModel)]="clientService.selectedClient.phone"
+  >
+  <label for="email">email</label>
+  <input
+    id="email"
+    type="text"
+    name="email"
+    #email="ngModel"
+    [(ngModel)]="clientService.selectedClient.email"
+  >
+  <label for="address">address</label>
+  <input
+    id="address"
+    type="text"
+    name="address"
+    #address="ngModel"
+    [(ngModel)]="clientService.selectedClient.address"
+  >
+  <input
+    id="delete"
+    (click)="clientForm; onDelete(clientService.selectedClient.$key)"
+    type="reset"
+    name="$key"
+    #$key="ngModel"
+    [(ngModel)]="clientService.selectedClient.$key"
+  >
+  <input id="submit" type="submit">
 
+  <div class="detailsActions" *ngIf='clientService.selectedClient.$key; else elseBlock'>
+    <label for="submit">update</label>
+    <label for="delete">delete</label>
+  </div>
+  <ng-template #elseBlock>
+    <div class="detailsActions">
+      <label for="submit">create</label>
+      <label for="delete">reset</label>
+    </div>
+  </ng-template>
+
+
+</form>
+
+lista: 
+<div *ngIf='isLoading'>
+  Loading...
+</div>
+<a class='row' *ngFor='let client of clientList' (click)="onEdit(client)">
+
+
+  <div>{{client.name}}</div>
+  <div>{{client.address}}</div>
+  <div>{{client.phone}}</div>
+  <div>{{client.email}}</div>
+  
+  <a (click)="onDelete(client.$key)">
+    <i class="material-icons">
+      delete_forever
+    </i>
+  </a>
+</a>
+<div class="temporalFix"></div>
